@@ -3,9 +3,9 @@
 #
 # Instructions!
 # cd ~
-# wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/adafruit-pitft.sh
-# chmod +x adafruit-pitft.sh
-# sudo ./adafruit-pitft.sh
+# wget https://raw.githubusercontent.com/unematiii/pitft-st7789/main/install.sh
+# chmod +x install.sh
+# sudo ./install.sh
 
 if [ $(id -u) -ne 0 ]; then
     echo "Installer must be run as root."
