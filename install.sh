@@ -176,19 +176,19 @@ function update_configtxt() {
     uninstall_bootconfigtxt
 
     if [ "${pitfttype}" == "st7789_240x320" ]; then
-        wget -P overlays/minipitft114-overlay.dts "$ADAFRUIT_GITHUB/overlays/st7789v_240x320-overlay.dts"
+        wget -P overlays/ "$ADAFRUIT_GITHUB/overlays/st7789v_240x320-overlay.dts"
         dtc -@ -I dts -O dtb -o /boot/overlays/drm-st7789v_240x320.dtbo overlays/st7789v_240x320-overlay.dts
         overlay="dtoverlay=drm-st7789v_240x320,rotate=${pitftrot}"
     fi
 
     if [ "${pitfttype}" == "st7789_240x240" ]; then
-        wget -P overlays/minipitft114-overlay.dts "$ADAFRUIT_GITHUB/overlays/minipitft13-overlay.dts"
+        wget -P overlays/ "$ADAFRUIT_GITHUB/overlays/minipitft13-overlay.dts"
         dtc -@ -I dts -O dtb -o /boot/overlays/drm-minipitft13.dtbo overlays/minipitft13-overlay.dts
         overlay="dtoverlay=drm-minipitft13,rotate=${pitftrot}"
     fi
 
     if [ "${pitfttype}" == "st7789_240x135" ]; then
-        wget -P overlays/minipitft114-overlay.dts "$ADAFRUIT_GITHUB/overlays/minipitft114-overlay.dts"
+        wget -P overlays "$ADAFRUIT_GITHUB/overlays/minipitft114-overlay.dts"
         dtc -@ -I dts -O dtb -o /boot/overlays/drm-minipitft114.dtbo overlays/minipitft114-overlay.dts
         overlay="dtoverlay=drm-minipitft114,rotation=${pitftrot}"
     fi
