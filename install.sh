@@ -188,7 +188,7 @@ function update_configtxt() {
     fi
 
     if [ "${pitfttype}" == "st7789_240x135" ]; then
-        wget -P overlays "$ADAFRUIT_GITHUB/overlays/minipitft114-overlay.dts"
+        wget -P overlays/ "$ADAFRUIT_GITHUB/overlays/minipitft114-overlay.dts"
         dtc -@ -I dts -O dtb -o /boot/overlays/drm-minipitft114.dtbo overlays/minipitft114-overlay.dts
         overlay="dtoverlay=drm-minipitft114,rotation=${pitftrot}"
     fi
