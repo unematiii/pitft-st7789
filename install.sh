@@ -178,19 +178,19 @@ function update_configtxt() {
     if [ "${pitfttype}" == "st7789_240x320" ]; then
         wget -P overlays/ "$ADAFRUIT_GITHUB/overlays/st7789v_240x320-overlay.dts"
         dtc -@ -I dts -O dtb -o /boot/overlays/drm-st7789v_240x320.dtbo overlays/st7789v_240x320-overlay.dts
-        overlay="dtoverlay=drm-st7789v_240x320,rotate=${pitftrot}"
+        overlay="dtoverlay=drm-st7789v_240x320,rotate=${pitftrot},fps=30"
     fi
 
     if [ "${pitfttype}" == "st7789_240x240" ]; then
         wget -P overlays/ "$ADAFRUIT_GITHUB/overlays/minipitft13-overlay.dts"
         dtc -@ -I dts -O dtb -o /boot/overlays/drm-minipitft13.dtbo overlays/minipitft13-overlay.dts
-        overlay="dtoverlay=drm-minipitft13,rotate=${pitftrot}"
+        overlay="dtoverlay=drm-minipitft13,rotate=${pitftrot},fps=60"
     fi
 
     if [ "${pitfttype}" == "st7789_240x135" ]; then
         wget -P overlays/ "$ADAFRUIT_GITHUB/overlays/minipitft114-overlay.dts"
         dtc -@ -I dts -O dtb -o /boot/overlays/drm-minipitft114.dtbo overlays/minipitft114-overlay.dts
-        overlay="dtoverlay=drm-minipitft114,rotation=${pitftrot}"
+        overlay="dtoverlay=drm-minipitft114,rotation=${pitftrot},fps=60"
     fi
 
     # any/all st7789's need their own kernel driver
