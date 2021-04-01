@@ -209,9 +209,7 @@ function update_configtxt() {
 
         pushd st7789_module
         make -C /lib/modules/$(uname -r)/build M=$(pwd) modules || { warning "Apt failed to compile ST7789V drivers!" && exit 1; }
-        mv /lib/modules/$(uname -r)/kernel/drivers/gpu/drm/tiny/mi0283qt.ko /lib/modules/$(uname -r)/kernel/drivers/gpu/drm/tiny/mi0283qt.BACK
         mv /lib/modules/$(uname -r)/kernel/drivers/staging/fbtft/fb_st7789v.ko /lib/modules/$(uname -r)/kernel/drivers/staging/fbtft/fb_st7789v.BACK
-        mv st7789v_ada.ko /lib/modules/$(uname -r)/kernel/drivers/gpu/drm/tiny/mi0283qt.ko
         mv fb_st7789v.ko /lib/modules/$(uname -r)/kernel/drivers/staging/fbtft/fb_st7789v.ko
         popd
     fi
